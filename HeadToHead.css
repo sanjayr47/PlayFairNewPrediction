@@ -1,0 +1,27 @@
+.my-container{
+    position: relative;    
+}
+
+#banner {
+    position: absolute;
+    bottom: 5px;
+    right: 10px; 
+     color:white;
+     font-size: 9px;
+     border-radius: 5px;
+    padding: 2px;
+    padding-right: 7px;
+    background-color: rgb(45, 153, 77);
+ }
+
+ #pts {
+    position: absolute;
+    bottom: -26px;
+    right: 12px; 
+    font-size: 9px;
+    font-size: 12px;
+ }
+
+ #topic{
+     font-size: 25px;
+ }
