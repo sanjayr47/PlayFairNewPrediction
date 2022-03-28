@@ -21,7 +21,7 @@ export default class CustomText extends React.Component {
                 
                     
                     
-                    {/* profile photo and name row */}
+                    {/* 
                     <div className="user-prediction-card">
 
                         <div className="col s12 m8 offset-m2 l6 offset-l3"  style={{marginBottom: 5}}>
@@ -66,7 +66,7 @@ export default class CustomText extends React.Component {
 
                     </div>
                     
-                    {/* just leaders text */}
+                    
                     <div className="user-prediction-card" style={{marginLeft: 13, marginTop: 5}}>
 
                         <div className="col s12 m8 offset-m2 l6 offset-l3">
@@ -106,7 +106,7 @@ export default class CustomText extends React.Component {
 
                     </div>
 
-                    {/* just leaders stories blocks */}
+                   
                     <div className="user-prediction-card" style={{marginLeft: 13, marginTop: 5}}>
 
                         <div className="col s12 m8 offset-m2 l6 offset-l3">
@@ -152,6 +152,15 @@ export default class CustomText extends React.Component {
 
                     </div>
                     
+                */}
+
+
+
+
+
+
+
+
                     {/* etheruem header */}
                     <div className="user-prediction-card">
 
