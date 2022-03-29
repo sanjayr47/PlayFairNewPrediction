@@ -65,6 +65,14 @@ export default class CustomText extends React.Component {
 
 
           }, false);
+          function wager(){
+            document.getElementById("wager_slider").style.display="block"
+          }
+          function sliderChange(){
+              console.log(String(document.getElementById("sliderFinal").value))
+              document.getElementById("betValue").innerHTML = "&nbsp;"+String(document.getElementById("sliderFinal").value)+"K $PLAY"
+          }
+
           function reset_input(){
             //  alert(document.getElementById("choose_date").value);
           }
@@ -98,11 +106,12 @@ export default class CustomText extends React.Component {
             var newPost = {
                 currency: "ETH",
                 LENGTH: date_length,
-                direction: direction
+                direction: direction,
+                
               };
 
               
-            betsRf.doc(urlParams.get("predictionId")).set({other_user_date: date_length, other_user_direction: direction}, { merge: true });
+            betsRf.doc(urlParams.get("predictionId")).set({other_user_date: date_length, other_user_direction: direction, newWager: String(document.getElementById("sliderFinal").value)}, { merge: true });
             //betsRf.add(newPost);
             document.getElementById("submit_header").innerHTML = "Submitted"
             document.getElementById("yes_button").style.display = "none"
@@ -281,7 +290,8 @@ export default class CustomText extends React.Component {
                     currency: "ETH",
                     LENGTH: date_length,
                     starting_date: chosenDate, 
-                    direction: direction
+                    direction: direction,
+                    wager: String(document.getElementById("sliderFinal").value)
                   };
                   
                   
@@ -661,9 +671,9 @@ export default class CustomText extends React.Component {
                                         <p style={{margin: 0, fontSize: 13}}><b>YOUR BET:&nbsp;&nbsp;&nbsp;</b></p>
                                     </div>
 
-                                    <div className="col s9" style={{marginLeft: 10}}>
+                                    <div className="col s9" style={{marginLeft: 10}} onClick={() => {wager();}}>
                                         
-                                        <p style={{color: 'gray'}}>&nbsp;10K $PLAY</p>
+                                        <p style={{color: 'gray'}} id="betValue">&nbsp;10K $PLAY</p>
                                         
                                     
                                         
@@ -672,6 +682,15 @@ export default class CustomText extends React.Component {
                                     
 
                                    
+                                </div>
+
+                                <div className="row valign-wrapper" id="wager_slider" style={{margin: 0, display: 'none'}}>
+                                <h1 class="flow-text">Amount Wagered</h1>
+                                <form action="#">
+                                    <p className="range-field">
+                                    <input type="range" id="sliderFinal" min="0" max="10" onChange={() => {sliderChange();}}/>
+                                    </p>
+                                </form>
                                 </div>
                             </div>
                         </div>
